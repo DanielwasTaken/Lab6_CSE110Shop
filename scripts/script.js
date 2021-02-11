@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
 async function getProducts(file){
   let rsp = await fetch(file);
-  let response = JSON.stringify(rsp);
+  let response = JSON.stringify(rsp.json());
   alert(response);
   return response;
 }
