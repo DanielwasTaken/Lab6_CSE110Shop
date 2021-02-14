@@ -39,8 +39,10 @@ class ProductItem extends HTMLElement {
     button.addEventListener("click", sendAlert);
     
     //
-    setProduct.setAttribute("title", product.title);
-    setProduct.setAttribute("price", product.price);
+    //setProduct.setAttribute("title", product.title);
+    //setProduct.setAttribute("price", product.price);
+    title.innerHTML = product.title;
+    price.innerHTML = product.price;
     //
     
     const style = shadow.appendChild(document.createElement("style"));
