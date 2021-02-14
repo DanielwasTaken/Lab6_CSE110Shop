@@ -15,10 +15,19 @@ class ProductItem extends HTMLElement {
                     <button onclick="alert('Added to Cart!')">Add to Cart</button>
                 </li -->
     */
+    //just putting it here instead
+    let index = localStorage.getItem("index");
+    let product = JSON.parse(localStorage.getItem(index));
+    
+    //
     const li = shadow.appendChild(document.createElement("li"));
     li.setAttribute("class", "product");
     const img = li.appendChild(document.createElement("img"));
-    img.setAttribute("src", JSON.parse(localStorage.getItem(localStorage.getItem("index"))).image);
+    
+    //
+    img.setAttribute("src", product.image);
+    //
+    
     //figure out how to get image link from localstorage here
     const title = li.appendChild(document.createElement("p"));
     title.setAttribute("class", "title");
@@ -28,6 +37,12 @@ class ProductItem extends HTMLElement {
     const button = li.appendChild(document.createElement("button"));
     //probably more stuff with the add and remove cart later
     button.addEventListener("click", sendAlert);
+    
+    //
+    setProduct.setAttribute("title", product.title);
+    setProduct.setAttribute("price", product.price);
+    //
+    
     const style = shadow.appendChild(document.createElement("style"));
     style.textContent = `
     .price {
