@@ -20,6 +20,7 @@ function storeData(data){
 }
 
 let numProducts = localStorage.getItem("itemCount");
+alert("numProducts = " + numProducts);
 let productList = document.getElementById("product-list");
 for(let i = 0; i < numProducts; i++){
   console.log(i);
