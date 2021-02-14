@@ -16,6 +16,7 @@ function storeData(data){
   for(let i = 0; i < data.length; i++){
     console.log(JSON.stringify(data[i]));
     localStorage.setItem(i, JSON.stringify(data[i]));
+    localStorage.setItem(i+"cart", "false");
   }
 }
 
