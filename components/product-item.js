@@ -123,7 +123,7 @@ function sendAlert(index, button){
   if(localStorage.getItem(index+"cart") == "false"){
     let count = localStorage.getItem("cartCount");
     count++;
-    localStorage.setItem("cartCount", count;);
+    localStorage.setItem("cartCount", count);
     let counter = document.getElementById("cart-count");
     counter.innerHTML = count;
     button.innerHTML = "Remove From Cart";
@@ -132,7 +132,7 @@ function sendAlert(index, button){
   else{
     let count = localStorage.getItem("cartCount");
     count--;
-    localStorage.setItem("cartCount", count;);
+    localStorage.setItem("cartCount", count);
     let counter = document.getElementById("cart-count");
     counter.innerHTML = count;
     button.innerHTML = "Add to Cart";
