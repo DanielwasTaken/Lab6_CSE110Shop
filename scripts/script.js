@@ -13,6 +13,7 @@ function storeData(data){
   console.log("data length = "+data.length);
   localStorage.setItem("products", data);
   localStorage.setItem("itemCount", data.length);
+  localStorage.setItem("cartCount", 0);
   for(let i = 0; i < data.length; i++){
     console.log(JSON.stringify(data[i]));
     localStorage.setItem(i, JSON.stringify(data[i]));
