@@ -2,7 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   let productCheck = localStorage.getItem("products");
-  if(products == null){
+  if(productcheck == null){
     fetch("https://fakestoreapi.com/products")
       .then(response => response.json())
       .then(data => storeData(data));
