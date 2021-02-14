@@ -42,7 +42,7 @@ class ProductItem extends HTMLElement {
       button.innerHTML = "Remove from Cart";
     }
     //probably more stuff with the add and remove cart later
-    button.addEventListener("click", sendAlert(index, button));
+    button.addEventListener("click", function(){sendAlert(index, button)});
     
     //
     //setProduct.setAttribute("title", product.title);
