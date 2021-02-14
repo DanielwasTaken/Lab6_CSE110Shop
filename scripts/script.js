@@ -4,6 +4,8 @@ window.addEventListener('DOMContentLoaded', () => {
   var lStorage = window.localStorage;
   if(true){
     var response = getProducts("https://fakestoreapi.com/products");
+    console.log(response.length);
+    console.log(response[1]);
     for(let i = 0; i < response.length; i++){
       console.log(response[i]);
       localStorage.setItem(i, JSON.stringify(response[i]));
