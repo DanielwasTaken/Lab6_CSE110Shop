@@ -121,6 +121,7 @@ class ProductItem extends HTMLElement {
 //more shit will happen here later
 function sendAlert(index, button){
   if(localStorage.getItem(index+"cart") == "false"){
+    localStorage.setItem(index+"cart", "true");
     let count = localStorage.getItem("cartCount");
     count++;
     localStorage.setItem("cartCount", count);
@@ -130,6 +131,7 @@ function sendAlert(index, button){
     alert("Added to cart");
   }
   else{
+    localStorage.setItem(index+"cart", "false");
     let count = localStorage.getItem("cartCount");
     count--;
     localStorage.setItem("cartCount", count);
