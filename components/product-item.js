@@ -28,7 +28,7 @@ class ProductItem extends HTMLElement {
     //probably more stuff with the add and remove cart later
     button.addEventListener("click", sendAlert);
     const style = shadow.appendChild(document.createElement("style"));
-    style.textContent = "
+    style.textContent = `
     .price {
       color: green;
       font-size: 1.8em;
@@ -91,7 +91,7 @@ class ProductItem extends HTMLElement {
       white-space: wrap;
       overflow: auto;
       text-overflow: unset;
-    }";
+    }`;
   }
 }
 //more shit will happen here later
