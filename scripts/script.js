@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if(true){
     var response = getProducts("https://fakestoreapi.com/products");
     localStorage.setItem("products", response);
-    alert(localStorage.getItem("products");
+    alert(localStorage.getItem("products"));
   }
   else{
     //make sure to delete later
