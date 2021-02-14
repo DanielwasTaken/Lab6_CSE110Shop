@@ -3,13 +3,17 @@
 window.addEventListener('DOMContentLoaded', () => {
   var lStorage = window.localStorage;
   if(true){
-    let response = getProducts("https://fakestoreapi.com/products");
-    console.log(response.length);
-    console.log(response[1]);
-    for(let i = 0; i < response.length; i++){
-      console.log(response[i]);
-      localStorage.setItem(i, JSON.stringify(response[i]));
-    }  
+    fetch("https://fakestoreapi.com/products")
+      .then(response => response.json())
+      .then(data => function(data){
+        localStorage.setItem("products", data);
+        for(let i = 0; i < data.length; i++){
+          console.log(JSON.stringify(data[i]));
+          localStorage.setItem(i, JSON.stringify(data[i]));
+        }
+    });
+    
+    
   }
   else{
     //make sure to delete later
@@ -18,9 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
   
 });
   
-async function getProducts(file){
+/*async function getProducts(file){
   let rsp = await fetch(file);
   let response = rsp.json();
   return response;
   
-}
+}*/
