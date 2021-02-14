@@ -4,8 +4,10 @@ window.addEventListener('DOMContentLoaded', () => {
   var lStorage = window.localStorage;
   if(true){
     var response = getProducts("https://fakestoreapi.com/products");
-    localStorage.setItem("products", response);
-    alert(JSON.parse(localStorage.getItem("products")));
+    for(let i = 0; i < response.length; i++){
+      console.log(response[i]);
+      localStorage.setItem(i, JSON.stringify(response[i]));
+    }  
   }
   else{
     //make sure to delete later
@@ -15,7 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
 });
   
 async function getProducts(file){
-  let rsp = await fetch(file).json();
-  let response = JSON.stringify(rsp);
+  let rsp = await fetch(file);
+  let response = rsp.json();
   return response;
+  
 }
