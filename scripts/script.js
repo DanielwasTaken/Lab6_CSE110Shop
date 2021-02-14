@@ -22,8 +22,10 @@ function storeData(data){
 let numProducts = localStorage.getItem("itemCount");
 let productList = document.getElementById("product-list");
 for(let i = 0; i < numProducts; i++){
+  console.log(i);
   let product = JSON.parse(localStorage.getItem(i));
   let setProduct = document.createElement("product-item");
+  console.log(product);
   setProduct.setAttribute("img", product.image);
   setProduct.setAttribute("title", product.title);
   setProduct.setAttribute("price", product.price);
