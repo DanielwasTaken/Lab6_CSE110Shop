@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if(productCheck == null){
     fetch("https://fakestoreapi.com/products")
       .then(response => response.json())
-      .then(data => storeData(data));
+      .then(data => storeData(data)).then(setData());;
   }  
   setData();
 });
