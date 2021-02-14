@@ -22,8 +22,11 @@ function storeData(data){
 }
 
 let numProducts = localStorage.getItem("itemCount");
-alert("numProducts = " + numProducts);
 let productList = document.getElementById("product-list");
+
+let counter = document.getElementById("cart-count");
+counter.innerHTML = localStorage.getItem("cartCount");
+
 for(let i = 0; i < numProducts; i++){
   localStorage.setItem("index", i);
   //let product = JSON.parse(localStorage.getItem(i));
