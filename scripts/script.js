@@ -23,7 +23,7 @@ let numProducts = localStorage.getItem("itemCount");
 alert("numProducts = " + numProducts);
 let productList = document.getElementById("product-list");
 for(let i = 0; i < numProducts; i++){
-  console.log(i);
+  localStorage.setItem("index", i);
   let product = JSON.parse(localStorage.getItem(i));
   let setProduct = document.createElement("product-item");
   //let image = setProduct.firstChild;
