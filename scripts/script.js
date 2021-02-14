@@ -20,8 +20,15 @@ function storeData(data){
 }
 
 let numProducts = localStorage.getItem("itemCount");
-
-//for(let i = 0; i < numProducts; i++){
+let productList = document.getElementById("product-list");
+for(let i = 0; i < numProducts; i++){
+  let product = JSON.parse(localStorage.getItem(i));
+  let setProduct = document.createElement("product-item");
+  setProduct.setAttribute("img", product.image);
+  setProduct.setAttribute("title", product.title);
+  setProduct.setAttribute("price", product.price);
+  productList.appendChild(setProduct);
+}
   
   
 
