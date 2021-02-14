@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(response => response.json())
       .then(data => storeData(data));
   }  
+  setData();
 });
 
 function storeData(data){
@@ -21,6 +22,7 @@ function storeData(data){
   }
 }
 
+function setData(){
 let numProducts = localStorage.getItem("itemCount");
 let productList = document.getElementById("product-list");
 
@@ -36,6 +38,7 @@ for(let i = 0; i < numProducts; i++){
   //setProduct.setAttribute("title", product.title);
   //setProduct.setAttribute("price", product.price);
   productList.appendChild(setProduct);
+}
 }
   
   
