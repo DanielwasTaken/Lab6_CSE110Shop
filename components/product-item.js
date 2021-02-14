@@ -35,8 +35,14 @@ class ProductItem extends HTMLElement {
     const price = li.appendChild(document.createElement("p"));
     price.setAttribute("class","price");
     const button = li.appendChild(document.createElement("button"));
+    if(localStorage.getItem(index+"cart") == "false"){
+      button.innerHTML = "Add to Cart";
+    }
+    else{
+      button.innerHTML = "Remove from Cart";
+    }
     //probably more stuff with the add and remove cart later
-    button.addEventListener("click", sendAlert);
+    button.addEventListener("click", sendAlert(index, button));
     
     //
     //setProduct.setAttribute("title", product.title);
@@ -113,8 +119,25 @@ class ProductItem extends HTMLElement {
   }
 }
 //more shit will happen here later
-function sendAlert(){
-  alert("Added to cart");
+function sendAlert(index, button){
+  if(localStorage.getItem(index+"cart") == "false"){
+    let count = localStorage.getItem("cartCount");
+    count++;
+    localStorage.setItem("cartCount", count;);
+    let counter = document.getElementById("cart-count");
+    counter.innerHTML = count;
+    button.innerHTML = "Remove From Cart";
+    alert("Added to cart");
+  }
+  else{
+    let count = localStorage.getItem("cartCount");
+    count--;
+    localStorage.setItem("cartCount", count;);
+    let counter = document.getElementById("cart-count");
+    counter.innerHTML = count;
+    button.innerHTML = "Add to Cart";
+  }
+  
 }
 
 customElements.define('product-item', ProductItem);
