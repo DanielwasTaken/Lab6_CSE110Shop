@@ -1,5 +1,4 @@
 // product-item.js
-var currentId = 0;
 
 class ProductItem extends HTMLElement {
   constructor(){
@@ -19,7 +18,7 @@ class ProductItem extends HTMLElement {
     const li = shadow.appendChild(document.createElement("li"));
     li.setAttribute("class", "product");
     const img = li.appendChild(document.createElement("img"));
-    img.setAttribute("src", JSON.parse(localStorage.getItem(currentId)).image);
+    img.setAttribute("src", JSON.parse(localStorage.getItem(localStorage.getItem("index")).image);
     //figure out how to get image link from localstorage here
     const title = li.appendChild(document.createElement("p"));
     title.setAttribute("class", "title");
