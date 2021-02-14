@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     fetch("https://fakestoreapi.com/products")
       .then(response => response.json())
       .then(data => storeData(data));
+    alert("not");
     
     
   }
