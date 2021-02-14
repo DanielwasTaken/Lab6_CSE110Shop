@@ -3,9 +3,12 @@
 window.addEventListener('DOMContentLoaded', () => {
   var lStorage = window.localStorage;
   if(true){
+    alert("maybe");
     fetch("https://fakestoreapi.com/products")
       .then(response => response.json())
       .then(data => function(data){
+        alert("worked");
+        console.log("data length = "+data.length);
         localStorage.setItem("products", data);
         for(let i = 0; i < data.length; i++){
           console.log(JSON.stringify(data[i]));
