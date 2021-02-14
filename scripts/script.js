@@ -26,9 +26,8 @@ for(let i = 0; i < numProducts; i++){
   console.log(i);
   let product = JSON.parse(localStorage.getItem(i));
   let setProduct = document.createElement("product-item");
-  console.log(product);
-  let image = setProduct.firstChild;
-  image.setAttribute("src", product.image);
+  //let image = setProduct.firstChild;
+  //image.setAttribute("src", product.image);
   setProduct.setAttribute("title", product.title);
   setProduct.setAttribute("price", product.price);
   productList.appendChild(setProduct);
